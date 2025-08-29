@@ -50,7 +50,8 @@ fun AgentFilInterface(navController: NavController){
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(15.dp),
+                .padding(15.dp)
+                .verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             for (fil in list.split("\n")) {
@@ -102,7 +103,8 @@ fun AgentInterface(navController: NavController){
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(15.dp),
+                .padding(15.dp)
+                .verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             for (fil in list.split("\n")) {

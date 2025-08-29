@@ -62,7 +62,8 @@ fun ReservationInterface(navController: NavController){
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(15.dp),
+                .padding(15.dp)
+                .verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             for (fil in list.split("\n")) {
@@ -114,7 +115,8 @@ fun ChooseAgent(navController: NavController){
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(15.dp),
+                .padding(15.dp)
+                .verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             for (fil in list.split("\n")) {
@@ -173,7 +175,8 @@ fun ChooseType(navController: NavController){
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(15.dp),
+                .padding(15.dp)
+                .verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             for (fil in list) {
