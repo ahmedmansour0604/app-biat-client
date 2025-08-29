@@ -40,7 +40,6 @@ import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import kotlinx.coroutines.runBlocking
 
-
 @Composable
 fun MainInterface(navController: NavController,modifier: Modifier = Modifier){
     BIATTheme {
@@ -73,18 +72,21 @@ fun MainInterface(navController: NavController,modifier: Modifier = Modifier){
                         Icon(
                             imageVector = Icons.Default.Person,
                             contentDescription = "History",
-                            modifier = Modifier.clickable(onClick = {
-                                navController.navigate("screen_six")
-                            })
-                                .padding(end=15.dp)
+                            modifier = Modifier
+                                .clickable(onClick = {
+                                    navController.navigate("screen_six")
+                                })
+                                .padding(end = 15.dp)
                                 .size(40.dp)
                         )
                         Icon(
                             imageVector = Icons.Default.Email,
                             contentDescription = "History",
-                            modifier = Modifier.clickable(onClick = {
-                                navController.navigate("screen_five")
-                            }).size(40.dp)
+                            modifier = Modifier
+                                .clickable(onClick = {
+                                    navController.navigate("screen_five")
+                                })
+                                .size(40.dp)
                         )
                     }
                 }
@@ -125,10 +127,10 @@ fun MainInterface(navController: NavController,modifier: Modifier = Modifier){
     }
 }
 
-suspend fun getResponse(s:String,debugging:Boolean=false): String {
+suspend fun getResponse(s:String, debugging:Boolean=true): String {
     if(debugging)println("Request Sent : $s")
     val client = HttpClient(CIO)
-    val response: HttpResponse = client.get("http://192.168.188.1:8456/$s")
+    val response: HttpResponse = client.get("http://${com.example.biat.IP_ADRESS}:8456/$s")
     if(debugging)println("Response Given : ${response.body<String>()}")
     client.close()
     return response.body<String>()

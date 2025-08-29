@@ -28,6 +28,7 @@ import com.example.biat.interfaces.ReservationInterface
 import com.example.biat.interfaces.getResponse
 import kotlinx.coroutines.runBlocking
 
+val IP_ADRESS:String = "192.168.188.1"
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
